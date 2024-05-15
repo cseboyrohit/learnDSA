@@ -1,0 +1,10 @@
+#include<iostream>
+using namespace std;
+  
+  int main(){
+    int n;
+    cin>>n; //Use for scanner 
+      // you use:- std::cout << "Hello World!";
+    cout<<"hello world my first program for dsa"<<endl; // use print the any  value;
+    return 0;
+  }
