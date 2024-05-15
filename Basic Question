@@ -8,3 +8,38 @@ using namespace std;
     cout<<"hello world my first program for dsa"<<endl; // use print the any  value;
     return 0;
   }
+----------------------------------------------------------
+QUESTION SOLVING 
+/* Sum of the even number  
+#include<iostream>
+ using namespace std;
+
+
+   int main(){
+       int num;
+       cout<< "Enter the number ";
+       cin>> num;
+
+       int sum=0;
+       int i=2;  // Start from the first even number
+
+       while(i<=num){
+          sum +=i;
+          i +=2;  // Move to the next even number
+       }
+       cout<<sum <<endl;
+----------------------------------------------------------------------------------
+      // Use for loop
+      int n;
+      cout << "Enter the number: ";
+      cin>>n;
+
+      int sum =0;
+      for(int i=2; i<=n; i+=2){
+        sum +=i;
+    
+      }
+      cout<<"The sum of all even numbers up to "<< sum<< endl; 
+
+
+
