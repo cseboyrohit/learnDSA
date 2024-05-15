@@ -1,0 +1,35 @@
+/* PERFORM BITWISE OPERATOR 
+
+ #include<iostream>
+ using namespace std;
+
+   int main(){
+    int a;
+       cin>>a;
+     if(a&1 ==0 ){ // Only use inC++
+        cout<< "Number is Even"<<endl;
+     }else
+        cout<<"number is odd ";
+  
+      return 0;
+
+   }
+
+   // USING JAVA  
+    // USE FOR BITWISE OPERATOR IN JAVA Same work in c++ 
+    
+   import java.util.Scanner;
+public class hw2{
+    public static void main(String[] args) {
+    
+    Scanner sc=new Scanner(System.in);
+    int i=sc.nextInt();    
+    int a=4;
+    int b=6;
+   System.out.println("a&b " + (a&b)); 
+   System.out.println("a|b " + (a|b));
+   System.out.println("a^b " + (a^b));
+   System.out.println("a~b " + (~a));
+
+    }
+}
