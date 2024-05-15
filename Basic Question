@@ -40,6 +40,20 @@ QUESTION SOLVING
     
       }
       cout<<"The sum of all even numbers up to "<< sum<< endl; 
+------------------------------------------------------------------------------------
+// USING JAVA FOR SOLVE PROBLEM 
+/* Fahrenheit to Celsius | °F to °C  */
 
+import java.util.Scanner;
+public class hw2{
+    public static void main(String[] args) {
+    Formula:->> °C = (°F - 32) ÷ 1.8
+
+     Scanner scn= new Scanner(System.in);
+      double feh=scn.nextInt();
+      double cel= (feh - 32) *  5/9;
+      System.out.println(cel);
+      }
+}
 
 
