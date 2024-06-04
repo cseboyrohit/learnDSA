@@ -7,7 +7,7 @@ public class lec_12_Binary_Search {
         int end = arr.length -1;
         int mid = (start + end )/2; // start + (end - start) / 2
 
-        while (start < end){
+        while (start <= end){
 
             if (arr[mid] == key) {
                 return  mid;
