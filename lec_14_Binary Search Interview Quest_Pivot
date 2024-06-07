@@ -68,3 +68,35 @@ public class lec_14_binary_Search_Qustion {
         System.out.println("Index of " + k + " in the rotated array: " + index);
     }
 }
+
+
+// find the square root of a given positive integer 'n':
+
+public class squareRoot {
+    public static int sqrt(int n) {
+        if (n == 0 || n == 1)
+            return n;
+        
+        int start = 1, end = n, result = 0;
+        while (start <= end) {
+            int mid = (start + end) / 2;
+            
+            if (mid * mid == n)
+                return mid;
+            
+            if (mid * mid < n) {
+                start = mid + 1;
+                result = mid;
+            } else {
+                end = mid - 1;
+            }
+        }
+        return result;
+    }
+    
+    public static void main(String[] args) {
+        int n = 25; // example input
+        int sqrtValue = sqrt(n);
+        System.out.println("Square root of " + n + " is: " + sqrtValue);
+    }
+}
