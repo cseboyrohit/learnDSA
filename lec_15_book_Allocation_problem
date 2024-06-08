@@ -1,0 +1,57 @@
+// Program to find the minimum number of pages each student should read in an optimal book allocation scenario.
+ // this is import question for interview purpose
+
+package learnDSA.com;
+
+public class lec_15_book_Allocate {
+
+    static boolean isValid(int[]arr, int n, int k, int mid){
+       int studentRequire =1;
+       int sum=0;
+           for(int i=0; i < n; i++){
+               sum += arr[i];
+               if(sum > mid){
+                   studentRequire ++;
+                   sum = arr[i];
+               }
+               if(studentRequire > k)
+                   return false;
+           }
+           return true;
+    }
+
+    static int findPages(int[]arr,int n, int k){
+        if(n < k)
+            return -1;
+
+        int mx = 0;
+         for(int element : arr){
+             if(mx < element)
+                 mx =element;
+         }
+         int sum = 0;
+         for(int i=0; i<arr.length; i++){
+             sum +=arr[i];
+         }
+        int start = mx;
+         int end = sum;
+         int result = 0;
+
+          while (start <= end ) {
+              int mid = start + (end - start) / 2;
+              if (isValid(arr, n, k, mid) == true) {
+                  result = mid;
+                  end = mid - 1;
+              } else {
+                  start = mid + 1;
+              }
+          }
+          return result;
+    }
+
+    public static void main(String[] args) {
+        int arr[] = {10,20,30,40}; //{12, 34, 67, 90};
+        int m = 2;
+        System.out.println("Minimum number of pages = " + findPages(arr, arr.length, m));
+    }
+}
