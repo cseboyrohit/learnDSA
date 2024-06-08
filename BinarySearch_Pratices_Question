@@ -33,6 +33,7 @@ public class BinarySearch_Pratices {
 }
 
  */
+Question no:- 1--------------------------------------------------------------
 
 /*cheak the arrray acending order ya decending order
 
@@ -59,7 +60,7 @@ public class BinarySearch_Pratices {
 }
  */
 
-
+Question no:- 2------------------------------------------------------------
 /*
 // find the first and last element
 public class BinarySearch_Pratices {
@@ -112,7 +113,7 @@ public class BinarySearch_Pratices {
 
  */
 
-.........................................................
+Question no:- 3.........................................................
 // Count the element in sort array
 
 public class BinarySearch_Pratices {
@@ -167,7 +168,7 @@ public class BinarySearch_Pratices {
 }
 
  */
--------------------------------------------------------------------------------------
+Question no:- 4-------------------------------------------------------------------------------------
 // finding an element in a rotated sorted array using a modified binary search:  
 
 public class RotatedSortedArraySearch {
@@ -212,3 +213,42 @@ public class RotatedSortedArraySearch {
     }
 }
 
+Question no:- 5 ----------------------------------------------------------------------------
+
+//Explain the functionality of the nearlySearch method in the given Java code
+
+public class BinarySearch_Pratices {
+    static int nearlySearch(int[] arr, int element) {
+        int start = 0;
+        int end = arr.length - 1;
+
+        while (start <= end) {
+            int mid = start + (end - start) / 2;
+
+            // If element is found at mid
+            if (arr[mid] == element)
+                return mid;
+
+            // If element is found nearly at mid-1
+            if (mid - 1 >= start && arr[mid - 1] == element)
+                return mid - 1;
+
+            // If element is found nearly at mid+1
+            if (mid + 1 <= end && arr[mid + 1] == element)
+                return mid + 1;
+
+            // If element is not found, update start and end pointers
+            if (arr[mid] < element)
+                start = mid + 2;
+            else
+                end = mid - 2;
+        }
+
+        return -1; // Element not found
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {5, 10, 20, 30, 40};
+        System.out.println(nearlySearch(arr, 20)); // Output: 2 (index of the nearly matching element)
+    }
+}
