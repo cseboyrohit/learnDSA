@@ -55,3 +55,67 @@ public class lec_15_book_Allocate {
         System.out.println("Minimum number of pages = " + findPages(arr, arr.length, m));
     }
 }
+
+// Same code of Book Allocation
+
+public class lec_15_book_Allocate {
+    public static boolean isvalid(int[]arr,int numofBook, int k,int mid){
+        int student = 1;
+        int sum = 0;
+
+             for(int i = 0; i < numofBook; i++){
+                 sum = sum + arr[i];
+
+                 if(sum > mid){
+                     student++;
+                     sum = arr[i];
+                 }
+                 if (student > k)
+                     return false;
+             }
+             return true;
+    }
+
+
+    public static int findPage(int[]arr, int numOfbook, int k){
+          if(numOfbook < k)
+              return 1;
+
+          int max =0;
+          for(int element : arr){
+              if(element > max)
+                   max = element;
+          }
+
+
+          int sum=0;
+           for(int i=0; i < arr.length; i++){
+               sum +=arr[i];
+
+           }
+
+
+           int start =max;
+           int end = sum;
+           int result = -1;
+             while (start <= end) {
+                 int mid = start + (end - start)/2;
+
+                 if(isvalid(arr, numOfbook, k, mid) == true){
+                     result = mid;
+                     end = mid -1;
+                 }
+                 else
+                     start = mid +1;
+             }
+          return result;
+
+    }
+
+    public static void main(String[] args) {
+        int arr[] = {12, 34, 67, 90};
+        int m = 2;
+        System.out.println("Minimum number of pages = " + findPage(arr, arr.length, m));
+
+    }
+}
