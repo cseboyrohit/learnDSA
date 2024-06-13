@@ -19,3 +19,46 @@ public class lec_18_insertion_Sort {
         insertSort(new int[]{36, 19, 29, 12, 5});
     }
 }
+
+
+
+/******************************************************************************
+Imagine tum ek deck of cards lekar khel rahe ho. Har card par ek number likha hai, jaise ki 1 se lekar 10 tak. Ab tumhe un cards ko arrange karna hai, lekin tumhe sirf ek card ek baar utha sakte ho.
+
+Insertion sort ka kaam bhi kuch aise hi hai. Tum ek ek card uthate jaate ho aur unhe sahi jagah par rakhkar sorted order mein arrange karte jaate ho. Yeh tarika use hota hai jab tumhe kuch items ko sorted order mein rakhna hota hai.
+
+Chalo, ek example se samjhte hain. Socho tumhare paas yeh cards hai: 5, 2, 4, 6, 1, 3. Hum insertions sort use karke inko sort karenge.
+
+Sabse pehle, hum second card, yani 2 ko dekhte hain. Hum usse pehle wale cards ko dekhte hain aur dekhte hain ki kya 2 ko sahi jagah par place kiya jaa sakta hai.
+
+Ab 2 ko dekhte hain, aur dekhte hain ki 5 se chhota hai ya nahi. Haan, to hum 2 ko 5 ke pehle insert kar dete hain.
+
+Phir hum third card, yani 4 ko dekhte hain. Hum dekhte hain ki kya 4 ko sahi jagah par insert kiya ja sakta hai. Hum 5 ke pehle hi dekhte hain, kyun ki 5 se chhota hai, to hum ise 5 ke pehle insert kar dete hain.
+
+Aise hi hum har ek card ko dekhte hain aur unko sahi jagah par insert karte jaate hain. Jab sab kuch ho jaata hai, to humare paas ek sorted list hoti hai.
+
+Is tareeke se insertion sort kaam karta hai. Har ek element ko lekar, usse uske correct position par insert kiya jaata hai, aur gradually poora list sort ho jaata hai.
+
+*******************************************************************************/
+import java.util.*;
+public class Main
+{
+    public static void insertSort(int[]arr){
+       for(int i = 1; i < arr.length; i++){
+           int current = arr[i];
+           int j = i -1;
+           while (j >= 0 && arr[j] > current){
+               arr[j +1] = arr[j];
+               j--;
+           }
+           arr[j + 1] = current;
+       }
+       System.out.print(Arrays.toString(arr));
+    }
+    
+	public static void main(String[] args) {
+	    insertSort( new int[] {5, 2, 4, 6, 1, 3} );
+	   
+		
+	}
+}
