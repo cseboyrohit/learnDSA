@@ -1,0 +1,70 @@
+****************************************************
+//  simple Java code to reverse an array:
+*****************************************************
+
+import java.util.Arrays;
+public class lec_20_solving_leecodeProblem {
+
+    public static void reverseArray(int[]arr) {
+       int start =0;
+       int end = arr.length -1;
+
+           while (start < end) {
+               int temp = arr[start];
+                arr[start] = arr[end];
+               arr[end] = temp;
+               start ++;
+               end --;
+            }
+
+//        System.out.print(Arrays.toString(arr) + " ");
+
+        for (int i =0; i < arr.length; i++){
+            System.out.print(arr[i] + " ");
+        }
+    }
+
+    public static void main(String[] args) {
+        reverseArray(new int[] {1,2,3,4});
+    }
+}
+
+
+ >>> QUESTION NO:- 2
+*************************************************************
+Given an array/list 'ARR' of integers and a position ‘M’. You have to reverse the array after that position.
+
+Example:
+
+We have an array ARR = {1, 2, 3, 4, 5, 6} and M = 3 , considering 0 
+based indexing so the subarray {5, 6} will be reversed and our 
+output array will be {1, 2, 3, 4, 6, 5}.
+****************************************************************
+
+import java.util.*;
+
+public class Main {
+    public static void reverseArrayAfterPosition(int[] arr, int position) {
+        int start = position;
+        int end = arr.length - 1;
+
+        while (start < end) {
+            int temp = arr[start];
+            arr[start] = arr[end];
+            arr[end] = temp;
+
+            start++;
+            end--;
+        }
+
+        System.out.println("Reversed Array after position " + position + ": " + Arrays.toString(arr));
+    }
+
+    public static void main(String[] args) {
+        int[] originalArray = {1, 2, 3, 4, 5, 6};
+        int position = 3; // Assuming 0-based indexing
+
+        reverseArrayAfterPosition(originalArray, position);
+    }
+}
+
