@@ -94,6 +94,8 @@ import java.util.Arrays;
                 k++;
             }
         }
+
+      // copy element
         while (i < n) {
             mergeArray[k++] = arr1[i++];
         }
