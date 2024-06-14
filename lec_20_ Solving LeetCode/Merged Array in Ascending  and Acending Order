@@ -1,0 +1,89 @@
+
+import java.util.Arrays;
+
+ class MergeAscendingOrder {
+    public static int[] mergeAscending(int[] arr1, int[] arr2) {
+        int n = arr1.length;
+        int m = arr2.length;
+        int[] mergeArray = new int[n + m];
+
+        int i = 0, j = 0, k = 0;
+
+        // Merge elements while both arrays have elements
+        while (i < n && j < m) {
+            if (arr1[i] <= arr2[j]) { // Changed comparison to less than or equal
+                mergeArray[k] = arr1[i];
+                i++;
+                k++;
+            } else {
+                mergeArray[k] = arr2[j];
+                j++;
+                k++;
+            }
+        }
+
+          // Copy remaining elements 
+        while (i < n) {
+            mergeArray[k++] = arr1[i++];
+        }
+        while (j < m) {
+            mergeArray[k++] = arr2[j++];
+        }
+
+        return mergeArray;
+    }
+
+    public static void main(String[] args) {
+        int[] arr1 = {1, 3, 5, 7, 9};
+        int[] arr2 = {2, 4, 6, 8, 10};
+
+        int[] mergedAscending = mergeAscending(arr1, arr2);
+        System.out.println("Merged Array in Ascending Order: " + Arrays.toString(mergedAscending));
+    }
+}
+
+
+
+**********************************************
+  Merged Array in Acending Order
+************************************
+import java.util.Arrays;
+
+ class MergeDescendingOrder {
+    public static int[] mergeDescending(int[] arr1, int[] arr2) {
+        int n = arr1.length;
+        int m = arr2.length;
+        int[] mergeArray = new int[n + m];
+
+        int i = 0, j = 0, k = 0;
+        while (i < n && j < m) {
+            if (arr1[i] >= arr2[j]) {
+                mergeArray[k] = arr1[i];
+                i++;
+                k++;
+            } else {
+                mergeArray[k] = arr2[j];
+                j++;
+                k++;
+            }
+        }
+        while (i < n) {
+            mergeArray[k++] = arr1[i++];
+        }
+        while (j < m) {
+            mergeArray[k++] = arr2[j++];
+        }
+
+        return mergeArray;
+    }
+
+    public static void main(String[] args) {
+        int[] arr1 = {9, 7, 5, 3, 1};
+        int[] arr2 = {10, 8, 6, 4, 2};
+
+        int[] mergedDescending = mergeDescending(arr1, arr2);
+        System.out.println("Merged Array in Acending Order: " + Arrays.toString(mergedDescending));
+    }
+}
+****
+
