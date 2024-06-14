@@ -176,3 +176,95 @@ class MergeSortedArrays {
 //        }
     }
 }
+
+
+QUESTION NO:-5
+****************************************************************
+Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements.
+
+Input: nums = [0,1,0,3,12]
+Output: [1,3,12,0,0]
+Example 2:
+
+Input: nums = [0]
+Output: [0]
+
+*********************************************************************
+
+public class lec_20_solving_leecodeProblem {
+    public void moveZeroes(int[] nums) {
+        if(nums == null || nums.length == 0){
+            return ;
+        }
+
+        int insertPos =0;
+           for(int i = 0; i < nums.length; i++) {
+               if (nums[i] != 0){
+                   nums[insertPos] = nums[i];
+                   insertPos++;
+
+               }
+           }
+
+        // Fill the remaining positions with zeroes
+           while ( insertPos < nums.length){
+                nums[insertPos++] = 0;
+           }
+
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {0, 1, 0, 3, 12};
+
+        lec_20_solving_leecodeProblem moveto = new lec_20_solving_leecodeProblem(); // class name 
+        moveto.moveZeroes(nums);
+
+        for(int num : nums){
+            System.out.print(num+ "  ");
+        }
+
+    }
+}
+
+
+>>>>>>>>>>>>> 2ND METHOD Using swaping method <<<<<<<<<<<<<<<<<<
+
+public class MoveZeroesToEnd {
+    public void moveZeroes(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return;
+        }
+        
+        int left = 0;
+        int right = 0;
+        
+        // Iterate through the array
+        while (right < nums.length) {
+            // If the current element is non-zero, swap it with the left pointer
+            if (nums[right] != 0) {
+                int temp = nums[left];
+                nums[left] = nums[right];
+                nums[right] = temp;
+                
+                left++; // Move the left pointer forward
+            }
+            
+            right++; // Move the right pointer forward
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {0, 1, 0, 3, 12};
+        
+        MoveZeroesToEnd solution = new MoveZeroesToEnd();
+        solution.moveZeroes(nums);
+
+        // Print the modified array
+        for (int num : nums) {
+            System.out.print(num + " ");
+        }
+    }
+}
+
+
+
