@@ -63,7 +63,9 @@ public class lec_21_leeCode_ProblemPart_2 {
         }
     }
 
+**********************************
  Cheak array is sorted or not 
+**********************************
 public class lec_21_leeCode_ProblemPart_2 {
     public static boolean isArraySorted(int[] arr, int n) {
         if (n <= 1) {
