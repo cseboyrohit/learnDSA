@@ -63,3 +63,24 @@ public class lec_21_leeCode_ProblemPart_2 {
         }
     }
 
+ Cheak array is sorted or not 
+public class lec_21_leeCode_ProblemPart_2 {
+    public static boolean isArraySorted(int[] arr, int n) {
+        if (n <= 1) {
+            return true; // Array with 0 or 1 element is trivially sorted
+        }
+
+        for (int i = 1; i < n; i++) {
+            if (arr[i-1] > arr[i]) {
+                return false; // If we find an inversion, array is not sorted
+            }
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {2, 1, 3, 4};
+        boolean sorted = isArraySorted(nums, nums.length);
+        System.out.println("Is array sorted? " + sorted);
+    }
+}
