@@ -135,3 +135,112 @@ public class lec_21_leeCode_ProblemPart_2 {
     }
 }
 
+---------------------------------------------------------------------------------------------------
+
+*******************************************************
+The length of each array is greater than zero.
+
+2. The first index of each array is the most significant digit of the number. For example, if the array A[] = {4, 5, 1},
+ then the integer represented by this array is 451 and array B[] = {3, 4, 5} 
+so the sum will be 451 + 345 = 796. So you need to return {7, 9, 6}.
+
+Sample Input 1:
+2
+4 1 
+1 2 3 4
+6
+
+3 2
+1 2 3
+9 9    
+Sample Output 1:
+1 2 4 0
+2 2 2
+*************************************************************
+
+
+package learnDSA.com;
+
+import java.util.Scanner;
+
+public class lec_21_sumOfTwo_Arrays {
+
+        static void sumOfTwoArrays(int[]arr1, int n , int[]arr2, int m, int[]output){
+            int i = n -1;
+            int j = m -1;
+            int k = output.length -1;
+            int carry = 0;
+
+            while(i >= 0 && j >= 0){
+                int sum = arr1[i] + arr2[j] + carry;
+                carry = sum / 10;
+                output[k] = sum % 10;
+                i--;
+                j--;
+                k--;
+
+            }
+
+            while(i >= 0){
+                int sum = arr1[i] + carry;
+                carry = sum / 10;
+                output[k] = sum % 10;
+                i--;
+                k--;
+
+            }
+
+            while(j >= 0){
+                int sum = arr2[j] + carry;
+                carry = sum / 10;
+                output[k] = sum % 10;
+                j--;
+                k--;
+
+            }
+            output[k] = carry;
+
+
+        }
+
+
+        public static void main(String[] args) {
+
+
+            Scanner sc = new Scanner(System.in);
+
+            // Input for first array
+            System.out.print("Enter the size of array 1: ");
+            int n = sc.nextInt();
+            int[] arr1 = new int[n];
+            System.out.print("Enter elements of array 1: ");
+            for (int i = 0; i < n; i++) {
+                arr1[i] = sc.nextInt();
+            }
+
+            // Input for second array
+            System.out.print("Enter the size of array 2: ");
+            int n2 = sc.nextInt();
+            int[] arr2 = new int[n2];  // Use n2 instead of n
+            System.out.print("Enter elements of array 2: ");
+            for (int i = 0; i < n2; i++) {
+                arr2[i] = sc.nextInt();
+            }
+
+            // Determine the size of the output array
+            int maxLength = Math.max(n, n2) + 1;  // Maximum possible length of the output array
+            int[] output = new int[maxLength];
+
+            // Call the method to calculate the sum of arrays
+            sumOfTwoArrays(arr1, n, arr2, n2, output);
+
+            // Print the result
+            System.out.print("Sum of arrays: ");
+            for (int num : output) {
+                System.out.print(num + " ");
+            }
+            System.out.println();
+        }
+    }
+
+
