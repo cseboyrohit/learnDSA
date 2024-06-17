@@ -1,0 +1,25 @@
+package StringHandling.com;
+
+import java.util.Scanner;
+
+
+public class subString {
+    public static void cheakSubstring(String str){
+        int length = str.length();
+        for(int i = 0; i < length; i++){
+            for(int j = i; j < length; j++) {
+                System.out.println(str.substring(i,j+1));// because j+1 = (n -1) se run hota hai
+            }
+        }
+
+    }
+
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String st = sc.nextLine().trim();
+        sc.close();
+        cheakSubstring(st);
+
+    }
+}
