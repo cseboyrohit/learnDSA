@@ -6,6 +6,8 @@ public class PalindromeChecker {
         Scanner scanner = new Scanner(System.in);
         
         System.out.print("Enter a string to check if it is a palindrome: ");
+        // The trim() method removes whitespace from both ends of a string.
+
         String str = scanner.nextLine().trim(); // Read input from user and trim any leading/trailing whitespace
         
         scanner.close(); // Close the scanner to free up resources
