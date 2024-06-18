@@ -1,0 +1,48 @@
+/*Given string str of the type “3(ab)4(cd)”,
+ the task is to expand it to “abababcdcdcdcd” where integers are from the range [1, 9].
+
+ Examples:
+
+ Input: str = “3(ab)4(cd)”
+Output: abababcdcdcdcd
+Input: str = “2(kl)3(ap)”
+Output: klklapapap
+ */
+
+package StringHandling.com;
+
+public class exapandString {
+
+    public static void expandString(String str) {
+        StringBuffer output = new StringBuffer();
+        int i = 0;
+        while (i < str.length()) {
+            char ch = str.charAt(i);
+            if (Character.isDigit(ch)) { // a method that checks whether the character ch is a digit.
+                int n = ch - '0';
+                StringBuffer temp = new StringBuffer();
+                int j = i + 2; // Move j to skip the '(' character
+                while (str.charAt(j) != ')') {
+                    temp.append(str.charAt(j));
+                    j++;
+                }
+                for (int k = 0; k < n; k++) {
+                    output.append(temp);
+                }
+                i = j + 1; // Move i past the ')'
+            } else {
+                output.append(ch);
+                i++;
+            }
+        }
+        System.out.println(output);
+    }
+
+    public static void main(String[] args) {
+        // Example usage:
+        expandString("3(ab)4(cd)");
+        expandString("2(kl)3(ap)");
+
+    }
+
+}
