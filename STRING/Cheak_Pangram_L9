@@ -1,3 +1,21 @@
+/* **************************************************************
+  Given a string check if it is Pangram or not. A pangram is a sentence containing every letter in the English Alphabet.
+
+Examples:
+
+"The quick brown fox jumps over the lazy dog" is a Pangram [Contains all the characters from 'a' to 'z']
+"The quick brown fox jumps over the dog" is not a Pangram [Doesn't contain all the characters from'a' to 'z', as 'l','a', 'z', 'y' are missing]
+
+TEST CASE 1:
+Input: str = "Bawds jog, flick quartz, vex nymph"
+Output: true
+
+TEST CASE 2:
+Input: str = "sdfs"
+Output: false
+*/ ******************************************************************************
+
+
 package StringHandling.com;
 
 public class Cheak_Pangram_L9 {
