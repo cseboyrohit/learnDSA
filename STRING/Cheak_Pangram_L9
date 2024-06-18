@@ -1,0 +1,34 @@
+package StringHandling.com;
+
+public class Cheak_Pangram_L9 {
+
+
+        public static boolean isPangram(String str) {
+           // Create a boolean array to mark the presence of each letter
+            boolean[] alphabetPresent = new boolean[26];
+
+            for (int i = 0; i < str.length(); i++) {
+                char ch = Character.toLowerCase(str.charAt(i));
+                if ('a' <= ch && ch <= 'z') {
+                    alphabetPresent[ch - 'a'] = true;
+                }
+            }
+            
+            // Check if all letters (a-z) are present
+            for (boolean present : alphabetPresent) {
+                if (!present) {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        public static void main(String[] args) {
+            String test1 = "The quick brown fox jumps over the lazy dog";
+            String test2 = "Hello World";
+
+            System.out.println("\"" + test1 + "\" is a pangram? " + isPangram(test1));
+            System.out.println("\"" + test2 + "\" is a pangram? " + isPangram(test2));
+        }
+    }
