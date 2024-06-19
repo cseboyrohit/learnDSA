@@ -1,0 +1,27 @@
+package StringHandling.com;
+
+public class performOperation {
+
+        public static int operationperform(String[] str){
+            int x = 0;
+            for (String operation : str){
+                switch(operation){
+                    case "x++":
+                    case "++x":
+                        x++;
+                        break;
+                    default:
+                        x--;
+                        break;
+                }
+            }
+            return x;
+        }
+
+        public static void main(String[] args) {
+            // Example usage:
+            String[] operations = {"x++", "++x", "--x", "x++"};
+            int result = operationperform(operations);
+            System.out.println("Result: " + result); // Output should be 2 for the given operations
+        }
+    }
