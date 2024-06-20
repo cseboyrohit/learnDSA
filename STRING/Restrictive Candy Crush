@@ -1,0 +1,26 @@
+package StringHandling.com;
+
+public class restrictiveCandyCrush {
+    public static void candyCrush(String str) {
+        StringBuffer sb = new StringBuffer(str);
+        int i =0;
+        while (i < sb.length()-1){
+            char ch1 = sb.charAt(i);
+            char ch2 = sb.charAt(i+1);
+
+            if (ch1 == ch2){
+                sb.delete(i, i+2);  // Delete the current and next character
+                if (i != 0)
+                    i--;  // Move back one position if not at the beginning
+                continue; // Continue to check the same index again
+            }
+            i++;
+            System.out.println(sb);
+        }
+
+    }
+
+    public static void main(String[] args) {
+       candyCrush("good");
+    }
+}
