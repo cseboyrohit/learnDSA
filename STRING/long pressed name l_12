@@ -17,26 +17,24 @@ package StringHandling.com;
 
 public class long_pressedName {
     static boolean isLongPressedName(String name, String typed) {
-        if (name.length() > typed.length())  // early exist code
+        if (name.length() > typed.length())
             return false;
 
-        int i =0;
-        int j =0;
-        while (i < name.length() && j < typed.length()){
-            char ch1 = name.charAt(i);
-            char ch2 = typed.charAt(j);
-            if(ch1 == ch2){
+        int i = 0;
+        int j = 0;
+
+        while (j < typed.length()) {
+            if (i < name.length() && name.charAt(i) == typed.charAt(j)) {
                 i++;
                 j++;
-            } else if (j > 0 && typed.charAt(j) == typed.charAt(j-1)){
-                j++;  // skip the long pressed character
+            } else if (j > 0 && typed.charAt(j) == typed.charAt(j - 1)) {
+                j++; // skip the long pressed character
             } else {
-                return false;  // characters don't match, not a long pressed name
+                return false;
             }
         }
 
-        // check if there are remaining characters in name
-       return true; // i == name.length();
+        return i == name.length();
     }
 
     public static void main(String[] args) {
