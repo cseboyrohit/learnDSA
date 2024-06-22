@@ -1,0 +1,56 @@
+
+Given a string str of lowercase alphabets. The task is to find the maximum occurring character in the string str.
+If more than one character occurs the maximum number of time then print the lexicographically smaller character.
+
+Example 1:
+
+Input:
+str = testsample
+Output: e
+Explanation: e is the character which
+is having the highest frequency.
+Example 2:
+
+Input:
+str = output
+Output: t
+*****************************************************************************
+
+
+public class Solution {
+
+    static char getMaxOccurringChar(String str) {
+        // Array to store frequency of each character
+        int[] freq = new int[26];
+        
+        // Calculate frequency of each character in the string
+        for (int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
+            freq[ch - 'a']++; // Increment frequency for the corresponding character
+        }
+        
+        // Find the character with maximum frequency
+        char maxChar = 'a'; // Start with the smallest character 'a'
+        int maxFreq = 0;
+        
+        for (int i = 0; i < 26; i++) {
+            if (freq[i] > maxFreq) {
+                maxFreq = freq[i];
+                maxChar = (char) (i + 'a'); // Convert index back to character
+            } else if (freq[i] == maxFreq && i + 'a' < maxChar) {
+                // If frequencies are same, choose lexicographically smaller character
+                maxChar = (char) (i + 'a');
+            }
+        }
+        
+        return maxChar;
+    }
+
+    public static void main(String[] args) {
+        String str1 = "testsample";
+        String str2 = "output";
+        
+        System.out.println("Max occurring character in '" + str1 + "' is: " + getMaxOccurringChar(str1));
+        System.out.println("Max occurring character in '" + str2 + "' is: " + getMaxOccurringChar(str2));
+    }
+}
