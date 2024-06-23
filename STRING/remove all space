@@ -1,0 +1,46 @@
+/* Given a string with white spaces, the task is to remove all white spaces from a string using Java built-in methods.
+Input: str = "       Geeks     for    Geeks   "            
+Output: GeeksforGeeks
+
+*********************************************************************************** */
+
+
+class BlankSpace {
+	public static void main(String[] args)
+	{
+		String str = "	 Geeks	 for Geeks	 ";
+
+		// Call the replaceAll() method
+		str = str.replaceAll("\\s", "");
+
+		System.out.println(str);
+	}
+}
+
+
+///////////////////////////////////////////////////////////////////////////////
+
+// Importing required libraries
+import java.io.*;
+import java.util.*;
+
+// Class
+class GFG {
+
+	// Main driver method
+	public static void main(String[] args)
+	{
+		String str = " Geeks	 for Geeks	 ";
+		String op = "";
+
+		for (int i = 0; i < str.length(); i++) {
+			char ch = str.charAt(i);
+
+			// Checking whether is white space or not
+			if (!Character.isWhitespace(ch)) { 
+				op += ch;
+			}
+		}
+		System.out.println(op);
+	}
+}
