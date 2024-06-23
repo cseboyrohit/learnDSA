@@ -1,0 +1,42 @@
+/*  Problem statement
+You have been given a string 'STR' of words. You need to replace all the spaces between words with “@40”.
+
+Sample Input 1:
+2
+Coding Ninjas Is A Coding Platform
+Hello World
+Sample Output 1:
+Coding@40Ninjas@40Is@40A@40Coding@40Platform
+Hello@40World
+
+************************************************************************************ */
+
+import java.util.Scanner;
+
+public class ReplaceSpaces {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        // Read the number of test cases
+        int T = scanner.nextInt();
+        scanner.nextLine(); // Consume newline after reading integer
+        
+        // Process each test case
+        for (int i = 0; i < T; i++) {
+            String STR = scanner.nextLine();
+            
+            // Replace spaces between words with "@40"
+            String replaced = replaceSpacesWithAt40(STR);
+            
+            // Print the modified string for this test case
+            System.out.println(replaced);
+        }
+        
+        scanner.close();
+    }
+    
+    // Method to replace spaces between words with "@40"
+    public static String replaceSpacesWithAt40(String str) {
+        return str.replaceAll("\\s+", "@40");
+    }
+}
