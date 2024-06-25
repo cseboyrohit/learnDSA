@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class JaggedArrayInputExample {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Step 1: Declare the jagged array (3 rows in this example)
+        int[][] jaggedArray = new int[3][];
+
+        // Step 2: Initialize each row with arrays of different lengths
+        jaggedArray[0] = new int[3]; // First row with 3 columns
+        jaggedArray[1] = new int[2]; // Second row with 2 columns
+        jaggedArray[2] = new int[4]; // Third row with 4 columns
+
+        // Step 3: Read input for each element in the jagged array
+        System.out.println("Enter elements for the jagged array:");
+
+        // Loop through each row
+        for (int i = 0; i < jaggedArray.length; i++) {
+            // Loop through each column in the current row
+            for (int j = 0; j < jaggedArray[i].length; j++) {
+                System.out.printf("Enter element for row %d, column %d: ", i, j);
+                jaggedArray[i][j] = scanner.nextInt();
+            }
+        }
+
+        // Step 4: Print the jagged array to verify
+        System.out.println("The jagged array you entered is:");
+        for (int i = 0; i < jaggedArray.length; i++) {
+            for (int j = 0; j < jaggedArray[i].length; j++) {
+                System.out.print(jaggedArray[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+        // Close the scanner
+        scanner.close();
+    }
+}
