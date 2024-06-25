@@ -1,0 +1,33 @@
+package Array_2D.com;
+
+import java.util.Scanner;
+
+public class input_2dArray {
+
+    public static void main(String[] args) {
+        
+        // Rectangular 2D Array
+        Scanner sc = new Scanner(System.in);
+        System.out.println(" intput row ");
+        int row = sc.nextInt();
+        System.out.println(" intput colom");
+        int colm = sc.nextInt();
+
+        int[][] arr = new int[row][colm];
+
+        for (int i = 0; i < row; i++){
+            for (int j = 0; j < colm; j++){
+                arr[i][j] = sc.nextInt();
+            }
+        }
+        System.out.println("out put");
+        for (int i = 0; i < row; i++){
+            for(int j = 0; j < colm; j++){
+                System.out.print(arr[i][j]+" ");
+            }
+            System.out.println();
+        }
+
+    }
+}
+
