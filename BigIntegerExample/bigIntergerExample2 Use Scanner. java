@@ -1,0 +1,21 @@
+import java.math.*;
+import java.util.*;
+
+ class BigIntegerExample {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        BigInteger num1 = sc.nextBigInteger();
+        BigInteger num2 = sc.nextBigInteger();
+
+//        BigInteger a = new BigInteger("12345678901234567890");
+//        BigInteger b = new BigInteger("98765432109876543210");
+
+        BigInteger result = num1.add(num2); // addition large number
+        System.out.println(result);
+
+        // BigInteger whose value is the greatest common divisor of abs(this) and abs(val)
+        BigInteger r = num1.gcd(num2);
+        System.out.println(r);
+
+    }
+}
