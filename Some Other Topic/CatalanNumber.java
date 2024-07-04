@@ -30,3 +30,15 @@ public class CatalanNumber {
         System.out.println("The " + n + "th Catalan number is: " + catalan(n));
     }
 }
+
+/* ********************************************************
+    The outer loop (for (int i = 2; i <= n; i++)) iterates from 2 to n, computing each Catalan number up to C_n.
+** For each i, initializes catalan[i] to 0.
+
+* The inner loop (for (int j = 0; j < i; j++)) computes catalan[i] by summing up products of previously computed Catalan numbers:
+
+** catalan[j] * catalan[i - j - 1]. Here, j ranges from 0 to i - 1.
+
+** This corresponds to the recursive formula for Catalan numbers: C_i = C_0 * C_{i-1} + C_1 * C_{i-2} + ... + C_{i-1} * C_0.
+
+    */
