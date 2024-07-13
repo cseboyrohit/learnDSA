@@ -8,7 +8,7 @@ public class Main {
         while (!s1.isEmpty()) {
             int tmp = s1.pop();
             
-            // Move elements from s2 back to s1 where they are greater than tmp
+         
             while (!s2.isEmpty() && s2.peek() > tmp) {
                 s1.push(s2.pop());
             }
