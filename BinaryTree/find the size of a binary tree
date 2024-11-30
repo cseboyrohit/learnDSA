@@ -1,0 +1,46 @@
+class Node {
+    int data;
+    Node left, right;
+
+    // Constructor to create a new node
+    public Node(int data) {
+        this.data = data;
+        left = right = null;
+    }
+}
+
+public class Main {
+    // Inorder traversal to print the nodes
+    public static void inorder(Node node) {
+        if (node == null) {
+            return;
+        }
+        inorder(node.left); // Traverse left subtree
+        System.out.println(node.data); // Print current node
+        inorder(node.right); // Traverse right subtree
+    }
+
+    // Function to find the size of the tree
+    public static int sizeOfTree(Node node) {
+        if (node == null) {
+            return 0;
+        }
+        return 1 + sizeOfTree(node.left) + sizeOfTree(node.right);
+    }
+
+    public static void main(String[] args) {
+        // Creating a binary tree
+        Node root = new Node(1);
+        root.left = new Node(2);
+        root.right = new Node(3);
+        root.left.left = new Node(4);
+        root.left.right = new Node(5);
+
+        // Print the binary tree in Inorder
+        System.out.println("Inorder traversal:");
+        inorder(root); // Perform inorder traversal from the root node
+
+        // Print the size of the tree
+        System.out.println("Size of the tree: " + sizeOfTree(root));
+    }
+}
