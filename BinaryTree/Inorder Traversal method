@@ -1,0 +1,38 @@
+class Node {
+    int data;
+    Node left, right;
+    Node(int d) {
+        data = d;
+        left = null;
+        right = null;
+    }
+}
+
+class GfG {
+    // Inorder Traversal method
+    public static void inorder(Node node) {
+        if (node == null) {
+            return;
+        }
+        inorder(node.left);  // Visit left subtree
+        System.out.print(node.data + " ");  // Print root node
+        inorder(node.right); // Visit right subtree
+    }
+
+    public static void main(String[] args) {
+        // Initialize and allocate memory for tree nodes
+        Node firstNode = new Node(2);
+        Node secondNode = new Node(3);
+        Node thirdNode = new Node(4);
+        Node fourthNode = new Node(5);
+
+        // Connect binary tree nodes
+        firstNode.left = secondNode;
+        firstNode.right = thirdNode;
+        secondNode.left = fourthNode;
+
+        // Print the binary tree in Inorder
+        System.out.println("Inorder traversal:");
+        inorder(firstNode); // Start Inorder traversal from the root node
+    }
+}
