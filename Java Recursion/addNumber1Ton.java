@@ -11,5 +11,7 @@ public class addNumber {
 
     public static void main(String[] args) {
         System.out.println(addNum(10));
+        
     }
 }
+//
